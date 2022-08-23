@@ -45,10 +45,13 @@ namespace TwoCoinApi
             ConnectionMultiplexer.Connect(Configuration.GetConnectionString("RedisConnection")));
 
             services.AddScoped<ITokenRepository, TokenRepository>();
+            services.AddScoped<TokenManager>();
+
             services.AddScoped<IUserRepository, UserRepositoryConst>();
             services.AddScoped<UserManager>();
-            services.AddScoped<TokenManager>();
+
             services.AddScoped<AuthManager>();
+
 
 
 
